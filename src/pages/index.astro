@@ -1,16 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import EntriesOne from "@/components/entries/EntriesOne.astro";
+// import EntriesOne from "@/components/entries/EntriesOne.astro";
 import Hero from "@/components/landing/Hero.astro";
 import Cta from "@/components/global/Cta.astro";
 const allPosts = await getCollection("posts");
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 
 // Sort posts by date in descending order (newest first)
-const sortedPosts = allPosts.sort(
-  (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
-);
+// const sortedPosts = allPosts.sort(
+//   (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+// );
 ---
 
 <BaseLayout>
@@ -26,24 +26,24 @@ const sortedPosts = allPosts.sort(
           ))
         }
       </ol>
-      <ul
-        class="grid grid-cols-1 mt-12 gap-1 gap-y-24 lg:grid-cols-3 sm:grid-cols-2"
-      >
-        {
-          sortedPosts.map((post) => (
-            <EntriesOne
-              url={"/posts/" + post.slug}
-              title={post.data.title}
-              description={post.data.description}
-              alt={post.data.title}
-              pubDate={post.data.pubDate.toString().slice(0, 10)}
-              author={post.data.author}
-              image={post.data.image.url}
-              tags={post.data.tags}
-            />
-          ))
-        }
-      </ul>
+      <!-- <ul -->
+      <!--   class="grid grid-cols-1 mt-12 gap-1 gap-y-24 lg:grid-cols-3 sm:grid-cols-2" -->
+      <!-- > -->
+      <!--   { -->
+      <!--     sortedPosts.map((post) => ( -->
+      <!--       <EntriesOne -->
+      <!--         url={"/posts/" + post.slug} -->
+      <!--         title={post.data.title} -->
+      <!--         description={post.data.description} -->
+      <!--         alt={post.data.title} -->
+      <!--         pubDate={post.data.pubDate.toString().slice(0, 10)} -->
+      <!--         author={post.data.author} -->
+      <!--         image={post.data.image.url} -->
+      <!--         tags={post.data.tags} -->
+      <!--       /> -->
+      <!--     )) -->
+      <!--   } -->
+      <!-- </ul> -->
     </div>
   </section>
   <Cta />
