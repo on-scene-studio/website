@@ -19,4 +19,3 @@ export default defineConfig({
   site: "https://os.studio",
   integrations: [tailwind(), sitemap(), mdx()],
 });
-

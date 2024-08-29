@@ -12,11 +12,11 @@ export async function getStaticPaths() {
   return uniqueTags.map((tag) => {
     // Filter posts by tag
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag)
+      post.data.tags.includes(tag),
     );
     // Sort filtered posts by date in descending order
     const sortedPosts = filteredPosts.sort(
-      (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate)
+      (a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate),
     );
 
     return {
@@ -33,11 +33,11 @@ const { posts } = Astro.props;
 <BaseLayout pageTitle={tag}>
   <section>
     <div
-      class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32 lg:pt-48"
+      class="mx-auto max-w-7xl px-8 py-12 md:px-12 lg:px-32 lg:pb-24 lg:pt-48"
     >
       <!-- Content omitted for brevity -->
       <ul
-        class="grid grid-cols-1 mt-12 gap-1 gap-y-24 lg:grid-cols-3 sm:grid-cols-2"
+        class="mt-12 grid grid-cols-1 gap-1 gap-y-24 sm:grid-cols-2 lg:grid-cols-3"
       >
         {
           posts.map((post) => (

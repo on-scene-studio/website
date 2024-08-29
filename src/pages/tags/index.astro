@@ -10,13 +10,20 @@ const pageTitle = "Tag Index";
 
 <BaseLayout pageTitle={pageTitle}>
   <section>
-    <div class="px-8 md:px-12 mx-auto max-w-7xl py-12 lg:px-32">
-      <ol role="list" class="flex flex-col space-y-2 mt-6">
-        {sortedTags.map((tag) => (
-          <li >
-            <a class="text-4xl tracking-tight text-balance font-medium font-display text-black md:text-6xl hover:text-blue-500" href={`/tags/${tag}`}>{tag}</a>
-          </li>
-        ))}
+    <div class="mx-auto max-w-7xl px-8 py-12 md:px-12 lg:px-32">
+      <ol role="list" class="mt-6 flex flex-col space-y-2">
+        {
+          sortedTags.map((tag) => (
+            <li>
+              <a
+                class="text-balance font-display text-4xl font-medium tracking-tight text-black hover:text-blue-500 md:text-6xl"
+                href={`/tags/${tag}`}
+              >
+                {tag}
+              </a>
+            </li>
+          ))
+        }
       </ol>
     </div>
   </section>

@@ -1,28 +1,22 @@
-<div
-  class=" "
-
->
-  <div class=" px-8 md:px-12 mx-auto max-w-7xl py-2  lg:px-32 text-xs">
+<div class="">
+  <div class="mx-auto max-w-7xl px-8 py-2 text-xs md:px-12 lg:px-32">
     <div
       x-data="{ open: false }"
-      class="relative flex flex-col w-full  mx-auto   rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row "
+      class="relative mx-auto flex w-full flex-col rounded-xl md:flex-row md:items-center md:justify-between md:rounded-full"
     >
-      <div
-        class="flex flex-row items-center justify-between md:justify-start"
-      >
+      <div class="flex flex-row items-center justify-between md:justify-start">
         <a
-          class="text-black hover:text-zinc-500 items-center font-normal uppercase gap-3 inline-flex "
+          class="inline-flex items-center gap-3 font-normal uppercase text-black hover:text-zinc-500"
           href="/"
         >
-
-        os.studio 
+          os.studio
         </a>
         <button
           @click="open = !open"
-          class="inline-flex items-center justify-center p-2 text-black hover:text-blue-500 focus:outline-none focus:text-black md:hidden"
+          class="inline-flex items-center justify-center p-2 text-black hover:text-blue-500 focus:text-black focus:outline-none md:hidden"
         >
           <svg
-            class="w-6 h-6"
+            class="h-6 w-6"
             stroke="currentColor"
             fill="none"
             viewBox="0 0 24 24"
@@ -46,12 +40,11 @@
       </div>
       <nav
         :class="{'flex': open, 'hidden': !open}"
-        class="flex-col flex-grow hidden py-12 md:py-0 md:flex md:items-end justify-center md:flex-row"
+        class="hidden flex-grow flex-col justify-center py-12 md:flex md:flex-row md:items-end md:py-0"
       >
         <ul
-          class="space-y-2 list-none md:space-y-0 md:ml-auto items-center md:inline-flex justify-center text-center md:text-left gap-3"
+          class="list-none items-center justify-center gap-3 space-y-2 text-center md:ml-auto md:inline-flex md:space-y-0 md:text-left"
         >
-
           <!-- <li> -->
           <!--   <a -->
           <!--     href="https://lexingtonthemes.com/" -->
@@ -63,7 +56,7 @@
           <li>
             <a
               href="mailto:jp@flojoy.io"
-              class="py-1.5 px-4 border focus:ring-2 h-8  rounded-full border-transparent bg-black hover:bg-black/10 text-white duration-200 focus:ring-offset-2 focus:ring-white hover:text-black inline-flex items-center justify-center ring-1 ring-transparent lg:ml-auto"
+              class="inline-flex h-8 items-center justify-center rounded-full border border-transparent bg-black px-4 py-1.5 text-white ring-1 ring-transparent duration-200 hover:bg-black/10 hover:text-black focus:ring-2 focus:ring-white focus:ring-offset-2 lg:ml-auto"
             >
               Contact Us
             </a>
@@ -71,6 +64,5 @@
         </ul>
       </nav>
     </div>
-
   </div>
 </div>
